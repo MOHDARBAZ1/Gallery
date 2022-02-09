@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+  /* background-image: url('https://images.unsplash.com/photo-1616812756962-5cbad862aff7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'); */
+  
+  background-image: url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-attachment: fixed
+}
+
+.img{
+  height: 25vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.myForm{
+  background-color: transparent;
+}
+
+
+
+.footer-basic {
+  padding:40px 0;
+  
+  color:#4b4c4d;
+  
+  
+}
+
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:black;
+  opacity:0.75;
+  background-color: white;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:20px;
+  color:black;
+  margin-bottom:0;
+  font-weight: bold;
+}
+
+.cardDesign{
+  transition: transform .2s;
+  box-shadow: 2px 2px 2px 2px;
+}
+
+.cardDesign:hover{
+  transform: scale(1.1);
+}

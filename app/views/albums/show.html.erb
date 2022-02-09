@@ -1,0 +1,59 @@
+<h1 class="my-3">Description:</h1>
+<p class="lead my-2"><%= @album.description %></p>
+<div class="row mt-5">
+  <% @album.images.each do |image|%>
+    <div class="col-lg-4 my-2">
+      <div class="card ">
+        <%=link_to image, target: "_blank" do%>
+        	<%= image_tag(image,class:'img-fluid img') %>
+        <%end%>
+        <div class="card-footer"> 
+            <%= link_to 'View', image, target: "_blank", class: "btn btn-secondary" %>
+            <%= link_to "Delete", purge_albums_path(id: image.id), data: {turbo_method: :delete, turbo_confirm: "Are youu sure?"}, class:"btn btn-danger"%>
+        </div>
+        
+      </div>
+  	</div>
+  <% end %>
+
+</div>
+
+
+
+<br>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Images
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with model: @album do |form| %>
+        <div class="field">
+          <%= form.file_field :images, :multiple =>true, class: "form-control w-50" %>
+        </div>
+        <br />
+        <div>
+          <%= form.submit "Add Images", class: "btn btn-secondary" %>
+        </div>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<div class="my-5">
+        <%= form_with model: album do |form| %>
+
+    
+
+        <div class="field">
+          <%= form.file_field :images, :multiple =>true, class: "form-control w-50" %>
+        </div>
+        <br />
+
+
+        <div>
+          <%= form.submit "Add Images", class: "btn btn-secondary" %>
+        </div>
+        <% end %>
+
+</div>
