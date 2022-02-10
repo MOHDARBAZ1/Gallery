@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
     @album = current_user.albums.build(album_params)
 
     if @album.save
-      redirect_to @album
+      redirect_to @album, notice: "Album created successfully"
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
 
     if @album.update(album_params)
-      redirect_to @album
+      redirect_to @album, notice: "Album Updated Succesfully."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -65,7 +65,7 @@ class AlbumsController < ApplicationController
   def purge
     attachment = ActiveStorage::Attachment.find(params[:id])
     attachment.purge
-    redirect_to fallback_location: root_path, notice: "Image deleted"
+    redirect_to  albums_url, notice: "Image deleted"
   end
 
 
