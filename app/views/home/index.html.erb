@@ -11,7 +11,7 @@
   <% @albums.each do |album| %>
     <div class = "col-lg-4 text-center">
       <div class="card m-3 cardDesign">
-      <%=link_to home_path(id: album.id), class:"text-decoration-none text-black" do%>
+        <%=link_to home_path(id: album.id), class:"text-decoration-none text-black" do%>
             <h3 class="card-title">
               <strong>Album:</strong> 
               <%= album.title %>
