@@ -27,6 +27,9 @@
         <div class="field">
           <%= form.label :cover_image, class:'form-label fw-bold' %>
           <%= form.file_field :cover_image, class: "form-control" %>
+          <% album.errors.full_messages_for(:cover_image).each do |message| %>
+          <p><%= message %></p>
+          <% end %>
         </div>
         
         
