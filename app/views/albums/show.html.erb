@@ -1,7 +1,7 @@
 <h1 class="my-3">Description:</h1>
 <p class="lead my-2"><%= @album.description %></p>
 <div class="row mt-5">
-  <% if album.cover_image.attached? %>
+  <% if @album.cover_image.attached? %>
     <%=link_to @album.cover_image, target: "_blank" do%>
       <%= image_tag(@album.cover_image, class:"img-fluid img border")%>
     <%end%>
