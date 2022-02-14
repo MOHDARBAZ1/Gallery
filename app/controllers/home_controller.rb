@@ -24,4 +24,6 @@ class HomeController < ApplicationController
     @album = Album.find(params[:id])
   end
 
+  
+
 end
