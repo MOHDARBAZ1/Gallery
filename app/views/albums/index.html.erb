@@ -15,14 +15,14 @@
   <% @albums.each do |album| %>
     <div class = "col-lg-4 text-center">
       <div class="card m-3 cardDesign">
-      <% if album.cover_image.attached? %>
-        <div class="card-header">
-          <%=link_to album, class:"text-decoration-none text-black" do%>
+      <%=link_to album, class:"text-decoration-none text-black" do%>
             <h3 class="card-title">
               <strong>Album:</strong>
               <%= album.title %>
             </h3>
-          <% end %>
+      <% end %>
+      <% if album.cover_image.attached? %>
+        <div class="card-header">
           <%=link_to album do%>
             <%= image_tag(album.cover_image, class: "img-fluid img mb-2") %><br>
           <%end%>
